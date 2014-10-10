@@ -30,18 +30,15 @@ OPTIONS:
 EOF
 }
 
-PYTHON="./env/bin/python"
-if [ ! -x $PYTHON ]; then
-  echo "No python executable found at ${PYTHON}"
-  if type python2 &>/dev/null; then
-    PYTHON=python2
-  elif type python &>/dev/null; then
-    PYTHON=python
-  else
-    echo "No python executable found anywhere"
-    exit
-  fi
+if type python2 &>/dev/null; then
+  PYTHON=python2
+elif type python &>/dev/null; then
+  PYTHON=python
+else
+  echo "No python executable found anywhere"
+  exit
 fi
+
 if [[ "$OSTYPE" == "darwin"* ]]; then
   export DYLD_LIBRARY_PATH=$(brew --prefix openssl)/lib:${DYLD_LIBRARY_PATH}
 fi
