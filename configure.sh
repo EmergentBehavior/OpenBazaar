@@ -101,8 +101,8 @@ function installMac {
   export LDFLAGS="-L$(brew --prefix openssl)/lib"
 
   #install python deps inside our virtualenv
-  ./env/bin/pip install -r requirements.txt
-  ./env/bin/pip install ./pysqlcipher
+  python ./env/bin/pip install -r requirements.txt
+  python ./env/bin/pip install ./pysqlcipher
 
   doneMessage
 }
@@ -130,8 +130,8 @@ function installUbuntu {
     virtualenv env
   fi
 
-  ./env/bin/pip install ./pysqlcipher
-  ./env/bin/pip install -r requirements.txt
+  python ./env/bin/pip install ./pysqlcipher
+  python ./env/bin/pip install -r requirements.txt
 
   doneMessage
 }
@@ -148,8 +148,8 @@ function installArch {
     virtualenv2 env
   fi
 
-  ./env/bin/pip install ./pysqlcipher
-  ./env/bin/pip install -r requirements.txt
+  python ./env/bin/pip install ./pysqlcipher
+  python ./env/bin/pip install -r requirements.txt
 
   doneMessage
 }
@@ -227,8 +227,8 @@ function installFedora {
     virtualenv env
   fi
 
-  ./env/bin/pip install ./pysqlcipher
-  ./env/bin/pip install -r requirements.txt
+  python ./env/bin/pip install ./pysqlcipher
+  python ./env/bin/pip install -r requirements.txt
 
   doneMessage
 }
